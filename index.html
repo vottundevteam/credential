@@ -6335,13 +6335,145 @@ response = requests.DELETE(url, headers=headers)</code></pre>
 
               
                   <div class="highlight model-example">
-                      <pre><code class="language-javascript" data-lang="javascript">""</code></pre>
+                      <pre><code class="language-javascript" data-lang="javascript">[
+  {
+    "certificate": "string",
+    "certificate_number": "string",
+    "course": "string",
+    "studentid": "string",
+    "issue_date": "2021-01-13",
+    "end_date": "2021-01-13",
+    "start_validity": "2021-01-13",
+    "end_validity": "2021-01-13",
+    "blockchain": 1,
+    "testimonial": "string",
+    "evidence": "string",
+    "evidence_label": "string"
+  }
+]</code></pre>
                   </div>
                 
               
                 <div class="model-definition" style="display: none;">
                   <div class="wtree">
-    <ul></ul>
+    <ul>
+          <li>
+            <span>
+              <b>certificate</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Certificate ID</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>certificate_number</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Acheivement Number of the certificate</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>course</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Badge ID</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>studentid</b>
+              <i class="object-type">String</i>
+
+              <i>Description: Student User ID</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>issue_date</b>
+              <i class="object-type">Date</i>
+              
+              <i>Description: Issued Date of the achievement</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>end_date</b>
+              <i class="object-type">Date</i>
+              
+              <i>Description: Expired Date of the achievement</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>start_validity</b>
+              <i class="object-type">Date</i>
+              
+              <i>Description: Start Validity of the achievement</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>end_validity</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: End Validity of the achievement</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>blockchain</b>
+              <i class="object-type">Integer</i>
+              
+              <i>Description: 1 - Ethereum, 2 - Hyperledger, 3 - Alastria</i>
+              
+            </span>
+          </li>
+          <li>
+            <span>
+              <b>testimonial</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Testimonial of the recipient</i>
+              
+            </span>
+          </li>
+          <li>
+            <span>
+              <b>evidence</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Multiple URL with comma separated</i>
+              
+            </span>
+          </li>
+          <li>
+            <span>
+              <b>evidence_label</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Multiple label with comma separated</i>
+              
+            </span>
+          </li>
+      </ul>
   </div>
                 </div>
               
@@ -6474,12 +6606,27 @@ response = requests.DELETE(url, headers=headers)</code></pre>
           <div class="tab-code tab-code-curl">
               <pre><code class="bash">curl --request POST \
   --url https://api.vottun.com/api/v2/credential/create/achievement/ \
-  --body '""'</code></pre>
+  --body '[{"certificate": "string","certificate_number": "string","course": "string","studentid": "string","issue_date": "2021-01-13","end_date": "2021-01-13","start_validity": "2021-01-13","end_validity": "2021-01-13","blockchain": 1,"testimonial": "string","evidence": "string","evidence_label": "string"}]'</code></pre>
           </div>
           <div class="tab-code tab-code-javascript" style="display: none">
               <pre><code class="javascript">fetch('https://api.vottun.com/api/v2/credential/create/achievement/', { 
     method: 'POST', 
-    body: "", 
+    body: [
+  {
+    "certificate": "string",
+    "certificate_number": "string",
+    "course": "string",
+    "studentid": "string",
+    "issue_date": "2021-01-13",
+    "end_date": "2021-01-13",
+    "start_validity": "2021-01-13",
+    "end_validity": "2021-01-13",
+    "blockchain": 1,
+    "testimonial": "string",
+    "evidence": "string",
+    "evidence_label": "string"
+  }
+], 
 }) 
 .then(e => e.json()) 
 .then((data) => { 
@@ -6495,7 +6642,22 @@ response = requests.DELETE(url, headers=headers)</code></pre>
 const options = { 
     method: 'POST', 
     url: 'https://api.vottun.com/api/v2/credential/create/achievement/', 
-    body: "", 
+    body: [
+  {
+    "certificate": "string",
+    "certificate_number": "string",
+    "course": "string",
+    "studentid": "string",
+    "issue_date": "2021-01-13",
+    "end_date": "2021-01-13",
+    "start_validity": "2021-01-13",
+    "end_validity": "2021-01-13",
+    "blockchain": 1,
+    "testimonial": "string",
+    "evidence": "string",
+    "evidence_label": "string"
+  }
+], 
 };
  
 request(options, function (error, response, body) { 
@@ -6513,7 +6675,22 @@ headers = {
 
 }
 
-body = ""
+body = [
+  {
+    "certificate": "string",
+    "certificate_number": "string",
+    "course": "string",
+    "studentid": "string",
+    "issue_date": "2021-01-13",
+    "end_date": "2021-01-13",
+    "start_validity": "2021-01-13",
+    "end_validity": "2021-01-13",
+    "blockchain": 1,
+    "testimonial": "string",
+    "evidence": "string",
+    "evidence_label": "string"
+  }
+]
 
 response = requests.POST(url, headers=headers, body=body)</code></pre>
           </div>
@@ -8263,13 +8440,163 @@ response = requests.DELETE(url, headers=headers)</code></pre>
 
               
                   <div class="highlight model-example">
-                      <pre><code class="language-javascript" data-lang="javascript">""</code></pre>
+                      <pre><code class="language-javascript" data-lang="javascript">[
+  {
+    "student_id": "string",
+    "email": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "dob": "string",
+    "issue_date": "2021-01-13",
+    "course": "string",
+    "certificate_code": "string",
+    "certificate_number": "string",
+    "expire_date": "2021-01-13",
+    "evidence": "string",
+    "evidence_label": "string",
+    "post_blockchain": "string",
+    "testimonial": "string"
+  }
+]</code></pre>
                   </div>
                 
               
                 <div class="model-definition" style="display: none;">
                   <div class="wtree">
-    <ul></ul>
+    <ul>
+      <li>
+            <span>
+              <b>student_id</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Recipient ID</i>
+              
+            </span>
+          </li>
+          <li>
+            <span>
+              <b>email</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Recipient Email</i>
+              
+            </span>
+          </li>
+          <li>
+            <span>
+              <b>first_name</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Recipient First Name</i>
+              
+            </span>
+          </li>
+          <li>
+            <span>
+              <b>last_name</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Recipient Last Name</i>
+              
+            </span>
+          </li>
+          <li>
+            <span>
+              <b>dob</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Recipient DOB</i>
+              
+            </span>
+          </li>
+
+          <li>
+            <span>
+              <b>certificate_code</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Certificate Code</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>certificate_number</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Acheivement Number of the certificate</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>course</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Badge ID</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>issue_date</b>
+              <i class="object-type">Date</i>
+              
+              <i>Description: Issued Date of the achievement</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>expire_date</b>
+              <i class="object-type">Date</i>
+              
+              <i>Description: Expired Date of the achievement</i>
+              
+            </span>
+          </li>
+      
+          <li>
+            <span>
+              <b>post_blockchain</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: yes /no</i>
+              
+            </span>
+          </li>
+          <li>
+            <span>
+              <b>testimonial</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Testimonial of the recipient</i>
+              
+            </span>
+          </li>
+          <li>
+            <span>
+              <b>evidence</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Multiple URL with comma separated</i>
+              
+            </span>
+          </li>
+          <li>
+            <span>
+              <b>evidence_label</b>
+              <i class="object-type">String</i>
+              
+              <i>Description: Multiple label with comma separated</i>
+              
+            </span>
+          </li>
+      </ul>
   </div>
                 </div>
               
@@ -8402,12 +8729,29 @@ response = requests.DELETE(url, headers=headers)</code></pre>
           <div class="tab-code tab-code-curl">
               <pre><code class="bash">curl --request POST \
   --url https://api.vottun.com/api/v2/credential/publish/json/ \
-  --body '""'</code></pre>
+  --body '[{"student_id": "string","email": "string","first_name": "string","last_name": "string","dob": "string","issue_date": "2021-01-13","course": "string","certificate_code": "string","certificate_number": "string","expire_date": "2021-01-13","evidence": "string","evidence_label": "string","post_blockchain": "string","testimonial": "string"}]'</code></pre>
           </div>
           <div class="tab-code tab-code-javascript" style="display: none">
               <pre><code class="javascript">fetch('https://api.vottun.com/api/v2/credential/publish/json/', { 
     method: 'POST', 
-    body: "", 
+    body: [
+  {
+    "student_id": "string",
+    "email": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "dob": "string",
+    "issue_date": "2021-01-13",
+    "course": "string",
+    "certificate_code": "string",
+    "certificate_number": "string",
+    "expire_date": "2021-01-13",
+    "evidence": "string",
+    "evidence_label": "string",
+    "post_blockchain": "string",
+    "testimonial": "string"
+  }
+], 
 }) 
 .then(e => e.json()) 
 .then((data) => { 
@@ -8423,7 +8767,24 @@ response = requests.DELETE(url, headers=headers)</code></pre>
 const options = { 
     method: 'POST', 
     url: 'https://api.vottun.com/api/v2/credential/publish/json/', 
-    body: "", 
+    body: [
+  {
+    "student_id": "string",
+    "email": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "dob": "string",
+    "issue_date": "2021-01-13",
+    "course": "string",
+    "certificate_code": "string",
+    "certificate_number": "string",
+    "expire_date": "2021-01-13",
+    "evidence": "string",
+    "evidence_label": "string",
+    "post_blockchain": "string",
+    "testimonial": "string"
+  }
+], 
 };
  
 request(options, function (error, response, body) { 
@@ -8441,7 +8802,24 @@ headers = {
 
 }
 
-body = ""
+body = [
+  {
+    "student_id": "string",
+    "email": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "dob": "string",
+    "issue_date": "2021-01-13",
+    "course": "string",
+    "certificate_code": "string",
+    "certificate_number": "string",
+    "expire_date": "2021-01-13",
+    "evidence": "string",
+    "evidence_label": "string",
+    "post_blockchain": "string",
+    "testimonial": "string"
+  }
+]
 
 response = requests.POST(url, headers=headers, body=body)</code></pre>
           </div>
