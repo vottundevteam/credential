@@ -305,6 +305,16 @@
                                 Number</a>
                         </li>
 
+                        <li>
+                            <a href="#credential-email-logs-get-e9Z7H"><span
+                                    class="api-method api-method-get">get</span> Get All Email Logs</a>
+                        </li>
+
+                        <li>
+                            <a href="#credential-email-logs-logId-get-jvodL"><span
+                                    class="api-method api-method-get">get</span> Find log by ID</a>
+                        </li>
+
                     </ul>
                 </li>
 
@@ -713,7 +723,8 @@ response = requests.POST(url, headers=headers, body=body)</code></pre>
                                                             <i>Description: Last Name of the recipient</i></span></li>
                                                     <li><span><b>dob</b> <i class=object-type>String</i> <i>Description:
                                                                 Birth Date of the recipient</i></span></li>
-                                                    <li><span><b>gender</b> <i class=object-type>String</i> <i>Enum: [M, F]
+                                                    <li><span><b>gender</b> <i class=object-type>String</i> <i>Enum: [M,
+                                                                F]
                                                             </i><i>Description: Gender of the recipient</i></span></li>
                                                     <li><span><b>group_id</b> <i class=object-type>String</i>
                                                             <i>Description: Group Name of the recipient</i></span></li>
@@ -4209,7 +4220,7 @@ response = requests.DELETE(url, headers=headers)</code></pre>
                                     <div class=wtree>
                                         <ul>
                                             <li><span><b>error_details</b> <i class=object-type>Array</i><i>Description:
-                                                    List of Error details (string)</i></span>
+                                                        List of Error details (string)</i></span>
                                                 <ul></ul>
                                             </li>
                                             <li><span><b>messages</b> <i class=object-type>Array</i></span>
@@ -4888,7 +4899,8 @@ response = requests.GET(url, headers=headers)</code></pre>
                                                             <i>Description: Last Name of the recipient</i></span></li>
                                                     <li><span><b>dob</b> <i class=object-type>String</i> <i>Description:
                                                                 Birth Date of the recipient</i></span></li>
-                                                    <li><span><b>gender</b> <i class=object-type>String</i> <i>Enum: [M,F]
+                                                    <li><span><b>gender</b> <i class=object-type>String</i> <i>Enum:
+                                                                [M,F]
                                                             </i><i>Description: Gender of the recipient</i></span></li>
                                                     <li><span><b>group_id</b> <i class=object-type>String</i>
                                                             <i>Description: Group Name of the recipient</i></span></li>
@@ -5398,7 +5410,7 @@ response = requests.DELETE(url, headers=headers)</code></pre>
                                     <div class=wtree>
                                         <ul>
                                             <li><span><b>messages</b> <i class=object-type>Array</i><i>Description:
-                                                    List of Messages (string)</i></span>
+                                                        List of Messages (string)</i></span>
                                                 <ul></ul>
                                             </li>
                                             <li><span><b>completed_achivements</b> <i class=object-type>Array</i></span>
@@ -5882,6 +5894,402 @@ response = requests.GET(url, headers=headers)</code></pre>
                 </div>
             </div>
         </div>
+        <hr class="api-divider" />
+        <div class=path>
+            <h3 id=credential-email-logs-get-e9Z7H><a href=#credential-email-logs-get-e9Z7H>Get All Email Logs</a></h3>
+            <p>Return all logs</p>
+            <div uk-alert class=path-url><span class="api-method api-method-get uk-label">get</span> <span
+                    class=root>https://demo.vottun.com/api/v2</span> <span class=link
+                    data-copy=https://demo.vottun.com/api/v2/credential/email/logs/
+                    uk-tooltip="Click to copy">/credential/email/logs/</span> <a class=api-path-try-btn
+                    data-id=credential-email-logs-get-e9Z7H></a></div>
+            <ul class=path-tabs uk-tab>
+                <li class=uk-active><a href=# data-tab=request>Request</a></li>
+                <li><a href=# data-tab=response>Response</a></li>
+                <li><a href=# data-tab=coding>Coding</a></li>
+            </ul>
+            <div class="tab path-tab path-tab-request">
+                <p>query</p>
+                <div class=blocks>
+                    <div class=blocks-block>
+                        <div class=blocks-block-info-col><span>page</span> <span
+                                class="attr uk-text-meta">optional</span></div>
+                        <div class=blocks-block-desc-col><span class=keyword>integer</span><br><span
+                                class="gray details">Page Number to return logs</span>
+                            <div class=request-box-details></div>
+                        </div>
+                    </div>
+                    <div class=blocks-block>
+                        <div class=blocks-block-info-col><span>state</span> <span
+                                class="attr uk-text-meta">optional</span></div>
+                        <div class=blocks-block-desc-col><span class=keyword>integer</span><br><span
+                                class="gray details">1 - Sent, 2 - Failed, 3 - Received</span>
+                            <div class=request-box-details></div>
+                        </div>
+                    </div>
+                    <div class=blocks-block>
+                        <div class=blocks-block-info-col><span>student_name</span> <span
+                                class="attr uk-text-meta">optional</span></div>
+                        <div class=blocks-block-desc-col><span class=keyword>string</span><br><span
+                                class="gray details">Recipient Name to return logs</span>
+                            <div class=request-box-details></div>
+                        </div>
+                    </div>
+                    <div class=blocks-block>
+                        <div class=blocks-block-info-col><span>publisher_name</span> <span
+                                class="attr uk-text-meta">optional</span></div>
+                        <div class=blocks-block-desc-col><span class=keyword>string</span><br><span
+                                class="gray details">Publisher Name to return logs</span>
+                            <div class=request-box-details></div>
+                        </div>
+                    </div>
+                    <div class=blocks-block>
+                        <div class=blocks-block-info-col><span>subject</span> <span
+                                class="attr uk-text-meta">optional</span></div>
+                        <div class=blocks-block-desc-col><span class=keyword>string</span><br><span
+                                class="gray details">Subject of email to return logs</span>
+                            <div class=request-box-details></div>
+                        </div>
+                    </div>
+                    <div class=blocks-block>
+                        <div class=blocks-block-info-col><span>from_date</span> <span
+                                class="attr uk-text-meta">optional</span></div>
+                        <div class=blocks-block-desc-col><span class=keyword>string</span><br><span
+                                class="gray details">Captured From date to return logs</span>
+                            <div class=request-box-details></div>
+                        </div>
+                    </div>
+                    <div class=blocks-block>
+                        <div class=blocks-block-info-col><span>to_date</span> <span
+                                class="attr uk-text-meta">optional</span></div>
+                        <div class=blocks-block-desc-col><span class=keyword>string</span><br><span
+                                class="gray details">Captured To date to return logs</span>
+                            <div class=request-box-details></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab path-tab path-tab-response" style="display: none;">
+                <h4>200</h4>
+                <div class=blocks>
+                    <div class=blocks-block>
+                        <div class=blocks-block-desc-col style="padding: 0 5px;"><span class="gray details">successful
+                                operation</span><br>
+                            <div class=request-box-details>
+                                <ul uk-tab style="margin-bottom: 5px;">
+                                    <li class=uk-active><a href=# class=btn-model-example>Example Value</a></li>
+                                    <li><a href=# class=btn-model-definition>Model</a></li>
+                                </ul>
+                                <div class="highlight model-example">
+                                    <pre><code class=language-javascript data-lang=javascript>{
+    "count": "",
+    "next": "",
+    "previous": "",
+    "results": {
+        "id": "",
+        "publisher_name": "",
+        "student_name": "",
+        "email": "",
+        "message": "",
+        "subject": "",
+        "failed_reason": "",
+        "status": "",
+        "email_type": "",
+        "created": ""
+    }
+}</code></pre>
+                                </div>
+                                <div class=model-definition style="display: none;">
+                                    <div class=wtree>
+                                        <ul>
+                                            <li><span><b>count</b> <i class=object-type>Integer</i> <i>Description:
+                                                        Total Log Count</i></span></li>
+                                            <li><span><b>next</b> <i class=object-type>String</i> <i>Description: Next
+                                                        Page URL</i></span></li>
+                                            <li><span><b>previous</b> <i class=object-type>String</i> <i>Description:
+                                                        Previous Page URL</i></span></li>
+                                            <li><span><b>results</b> <i class=object-type>Array</i></span>
+                                                <ul>
+                                                    <li><span><b>id</b> <i class=object-type>String</i> <i>Description:
+                                                                ID of the email log</i></span></li>
+                                                    <li><span><b>publisher_name</b> <i class=object-type>String</i>
+                                                            <i>Description: Name of the Publisher</i></span></li>
+                                                    <li><span><b>student_name</b> <i class=object-type>String</i>
+                                                            <i>Description: Name of the Recipient</i></span></li>
+                                                    <li><span><b>email</b> <i class=object-type>String</i>
+                                                            <i>Description: Email of the Recipient</i></span></li>
+                                                    <li><span><b>message</b> <i class=object-type>String</i>
+                                                            <i>Description: Email Message</i></span></li>
+                                                    <li><span><b>subject</b> <i class=object-type>String</i>
+                                                            <i>Description: Email Subject</i></span></li>
+                                                    <li><span><b>failed_reason</b> <i class=object-type>String</i>
+                                                            <i>Description: Reason if mail not sent</i></span></li>
+                                                    <li><span><b>status</b> <i class=object-type>String</i>
+                                                            <i>Description: Email status</i></span></li>
+                                                    <li><span><b>email_type</b> <i class=object-type>String</i>
+                                                            <i>Description: Type of Email</i></span></li>
+                                                    <li><span><b>created</b> <i class=object-type>String</i>
+                                                            <i>Description: Created Date of the log (System
+                                                                Generate)</i></span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab path-tab path-tab-coding" style="display: none;">
+                <ul class="uk-flex-right code-tabs" uk-tab>
+                    <li class=uk-active><a href=# data-tab=curl>cURL</a></li>
+                    <li><a href=# data-tab=javascript>JavaScript</a></li>
+                    <li><a href=# data-tab=node>Node</a></li>
+                    <li><a href=# data-tab=python>Python</a></li>
+                </ul>
+                <div class="tab-code tab-code-curl">
+                    <pre><code class=bash>curl --request GET \
+  --url https://demo.vottun.com/api/v2/credential/email/logs/?page=0&state=0&student_name=Something&publisher_name=Something&subject=Something&from_date=Something&to_date=Something</code></pre>
+                </div>
+                <div class="tab-code tab-code-javascript" style="display: none">
+                    <pre><code class=javascript>fetch('https://demo.vottun.com/api/v2/credential/email/logs/?page=0&state=0&student_name=Something&publisher_name=Something&subject=Something&from_date=Something&to_date=Something', { 
+    method: 'GET', 
+}) 
+.then(e => e.json()) 
+.then((data) => { 
+    console.log('Request succeeded with JSON response', data); 
+}) 
+.catch((error) => { 
+    console.log('Request failed', error); 
+});</code></pre>
+                </div>
+                <div class="tab-code tab-code-node" style="display: none">
+                    <pre><code class=javascript>const request = require('request');
+ 
+const options = { 
+    method: 'GET', 
+    url: 'https://demo.vottun.com/api/v2/credential/email/logs/?page=0&state=0&student_name=Something&publisher_name=Something&subject=Something&from_date=Something&to_date=Something', 
+};
+ 
+request(options, function (error, response, body) { 
+    if (error) throw new Error(error);
+ 
+    console.log(body); 
+});</code></pre>
+                </div>
+                <div class="tab-code tab-code-python" style="display: none">
+                    <pre><code class=python>import requests
+
+url = "https://demo.vottun.com/api/v2/credential/email/logs/?page=0&state=0&student_name=Something&publisher_name=Something&subject=Something&from_date=Something&to_date=Something"
+
+headers = {
+
+}
+
+response = requests.GET(url, headers=headers)</code></pre>
+                </div>
+            </div>
+        </div>
+        <hr class="api-divider" />
+        <div class=path>
+            <h3 id=credential-email-logs-logId-get-jvodL><a href=#credential-email-logs-logId-get-jvodL>Find log by
+                    ID</a></h3>
+            <p>Returns a single log</p>
+            <div uk-alert class=path-url><span class="api-method api-method-get uk-label">get</span> <span
+                    class=root>https://demo.vottun.com/api/v2</span> <span class=link
+                    data-copy=https://demo.vottun.com/api/v2/credential/email/logs/{logId}/
+                    uk-tooltip="Click to copy">/credential/email/logs/{logId}/</span> <a class=api-path-try-btn
+                    data-id=credential-email-logs-logId-get-jvodL></a></div>
+            <ul class=path-tabs uk-tab>
+                <li class=uk-active><a href=# data-tab=request>Request</a></li>
+                <li><a href=# data-tab=response>Response</a></li>
+                <li><a href=# data-tab=coding>Coding</a></li>
+            </ul>
+            <div class="tab path-tab path-tab-request">
+                <p>path</p>
+                <div class=blocks>
+                    <div class=blocks-block>
+                        <div class=blocks-block-info-col><span>logId</span> <span class="attr red">required</span></div>
+                        <div class=blocks-block-desc-col><span class=keyword>string</span><br><span
+                                class="gray details">Log ID of email to return</span>
+                            <div class=request-box-details></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab path-tab path-tab-response" style="display: none;">
+                <h4>200</h4>
+                <div class=blocks>
+                    <div class=blocks-block>
+                        <div class=blocks-block-desc-col style="padding: 0 5px;"><span class="gray details">successful
+                                operation</span><br>
+                            <div class=request-box-details>
+                                <ul uk-tab style="margin-bottom: 5px;">
+                                    <li class=uk-active><a href=# class=btn-model-example>Example Value</a></li>
+                                    <li><a href=# class=btn-model-definition>Model</a></li>
+                                </ul>
+                                <div class="highlight model-example">
+                                    <pre><code class=language-javascript data-lang=javascript>{
+    "id": "",
+    "publisher_name": "",
+    "student_name": "",
+    "email": "",
+    "message": "",
+    "subject": "",
+    "failed_reason": "",
+    "status": "",
+    "email_type": "",
+    "created": ""
+}</code></pre>
+                                </div>
+                                <div class=model-definition style="display: none;">
+                                    <div class=wtree>
+                                        <ul>
+                                            <li><span><b>id</b> <i class=object-type>String</i> <i>Description: ID of
+                                                        the email log</i></span></li>
+                                            <li><span><b>publisher_name</b> <i class=object-type>String</i>
+                                                    <i>Description: Name of the Publisher</i></span></li>
+                                            <li><span><b>student_name</b> <i class=object-type>String</i>
+                                                    <i>Description: Name of the Recipient</i></span></li>
+                                            <li><span><b>email</b> <i class=object-type>String</i> <i>Description: Email
+                                                        of the Recipient</i></span></li>
+                                            <li><span><b>message</b> <i class=object-type>String</i> <i>Description:
+                                                        Email Message</i></span></li>
+                                            <li><span><b>subject</b> <i class=object-type>String</i> <i>Description:
+                                                        Email Subject</i></span></li>
+                                            <li><span><b>failed_reason</b> <i class=object-type>String</i>
+                                                    <i>Description: Reason if mail not sent</i></span></li>
+                                            <li><span><b>status</b> <i class=object-type>String</i> <i>Description:
+                                                        Email status</i></span></li>
+                                            <li><span><b>email_type</b> <i class=object-type>String</i> <i>Description:
+                                                        Type of Email</i></span></li>
+                                            <li><span><b>created</b> <i class=object-type>String</i> <i>Description:
+                                                        Created Date of the log (System Generate)</i></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>400</h4>
+                <div class=blocks>
+                    <div class=blocks-block>
+                        <div class=blocks-block-desc-col style="padding: 0 5px;"><span class="gray details">Invalid ID
+                                supplied</span><br>
+                            <div class=request-box-details>
+                                <ul uk-tab style="margin-bottom: 5px;">
+                                    <li class=uk-active><a href=# class=btn-model-example>Example Value</a></li>
+                                    <li><a href=# class=btn-model-definition>Model</a></li>
+                                </ul>
+                                <div class="highlight model-example">
+                                    <pre><code class=language-javascript data-lang=javascript>""</code></pre>
+                                </div>
+                                <div class=model-definition style="display: none;">
+                                    <div class=wtree>
+                                        <ul></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>404</h4>
+                <div class=blocks>
+                    <div class=blocks-block>
+                        <div class=blocks-block-desc-col style="padding: 0 5px;"><span class="gray details">Log not
+                                found</span><br>
+                            <div class=request-box-details>
+                                <ul uk-tab style="margin-bottom: 5px;">
+                                    <li class=uk-active><a href=# class=btn-model-example>Example Value</a></li>
+                                    <li><a href=# class=btn-model-definition>Model</a></li>
+                                </ul>
+                                <div class="highlight model-example">
+                                    <pre><code class=language-javascript data-lang=javascript>""</code></pre>
+                                </div>
+                                <div class=model-definition style="display: none;">
+                                    <div class=wtree>
+                                        <ul></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>500</h4>
+                <div class=blocks>
+                    <div class=blocks-block>
+                        <div class=blocks-block-desc-col style="padding: 0 5px;"><span class="gray details">Server
+                                Issue</span><br>
+                            <div class=request-box-details>
+                                <ul uk-tab style="margin-bottom: 5px;">
+                                    <li class=uk-active><a href=# class=btn-model-example>Example Value</a></li>
+                                    <li><a href=# class=btn-model-definition>Model</a></li>
+                                </ul>
+                                <div class="highlight model-example">
+                                    <pre><code class=language-javascript data-lang=javascript>""</code></pre>
+                                </div>
+                                <div class=model-definition style="display: none;">
+                                    <div class=wtree>
+                                        <ul></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab path-tab path-tab-coding" style="display: none;">
+                <ul class="uk-flex-right code-tabs" uk-tab>
+                    <li class=uk-active><a href=# data-tab=curl>cURL</a></li>
+                    <li><a href=# data-tab=javascript>JavaScript</a></li>
+                    <li><a href=# data-tab=node>Node</a></li>
+                    <li><a href=# data-tab=python>Python</a></li>
+                </ul>
+                <div class="tab-code tab-code-curl">
+                    <pre><code class=bash>curl --request GET \
+  --url https://demo.vottun.com/api/v2/credential/email/logs/{logId}/</code></pre>
+                </div>
+                <div class="tab-code tab-code-javascript" style="display: none">
+                    <pre><code class=javascript>fetch('https://demo.vottun.com/api/v2/credential/email/logs/{logId}/', { 
+    method: 'GET', 
+}) 
+.then(e => e.json()) 
+.then((data) => { 
+    console.log('Request succeeded with JSON response', data); 
+}) 
+.catch((error) => { 
+    console.log('Request failed', error); 
+});</code></pre>
+                </div>
+                <div class="tab-code tab-code-node" style="display: none">
+                    <pre><code class=javascript>const request = require('request');
+ 
+const options = { 
+    method: 'GET', 
+    url: 'https://demo.vottun.com/api/v2/credential/email/logs/{logId}/', 
+};
+ 
+request(options, function (error, response, body) { 
+    if (error) throw new Error(error);
+ 
+    console.log(body); 
+});</code></pre>
+                </div>
+                <div class="tab-code tab-code-python" style="display: none">
+                    <pre><code class=python>import requests
+
+url = "https://demo.vottun.com/api/v2/credential/email/logs/{logId}/"
+
+headers = {
+
+}
+
+response = requests.GET(url, headers=headers)</code></pre>
+                </div>
+            </div>
+        </div>
         <hr class="api-divider uk-divider-icon" />
 
         <h2 style="margin-bottom: 40px;"><a href="#">Upload</a></h2>
@@ -6062,7 +6470,7 @@ response = requests.POST(url, headers=headers)</code></pre>
 
     <script>window.color = { base: '#0e87f8', text: '#FFF' };</script>
     <script
-        id="pathsObjectScript">window.pathsObject = { "auths": [{ "type": "apiKey", "name": "x-api-key", "in": "header", "title": "API key", "description": "\n        An API key is a special token (x-api-key) that you need to provide in header when making API calls, Like:\n        <code> { x-api-key: \"TOKEN_VALUE\" }</code>\n      " }], "rootUrl": "https://api.vottun.com/api/v2", "security": [{ "api_key": [] }], "paths": [{ "requests": [{ "items": [{ "name": "body", "description": "Recipient object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"dob\": \"\",\n    \"gender\": \"\",\n    \"group_id\": \"\",\n    \"email\": \"\",\n    \"phone\": \"\",\n    \"student_id\": \"\",\n    \"avatar\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"status\": \"\",\n    \"message\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/users/add/recipient/", "methodName": "post", "tags": ["Recipient"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "users-add-recipient-post-2u30M", "summary": "Add a new recipient to the credential" }, { "requests": [{ "items": [{ "name": "page", "description": "Page Number to return", "required": false, "type": "integer" }, { "name": "first_name", "description": "First Name of recipient to return", "required": false, "type": "string" }, { "name": "last_name", "description": "Last Name of recipient to return", "required": false, "type": "string" }, { "name": "email", "description": "Email of recipient to return", "required": false, "type": "string" }, { "name": "phone", "description": "Phone Number of recipient to return", "required": false, "type": "string" }, { "name": "student_id", "description": "StudentID of recipient to return", "required": false, "type": "string" }, { "name": "group_name", "description": "Group Name of recipient to return", "required": false, "type": "string" }], "title": "query" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"count\": \"\",\n    \"next\": \"\",\n    \"previous\": \"\",\n    \"results\": {\n        \"user_id\": \"\",\n        \"profile_id\": \"\",\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"dob\": \"\",\n        \"gender\": \"\",\n        \"group_id\": \"\",\n        \"email\": \"\",\n        \"phone\": \"\",\n        \"student_id\": \"\",\n        \"avatar\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    }\n}" }], "pathName": "/users/recipient/", "methodName": "get", "tags": ["Recipient"], "description": "Return all recipient", "produces": ["application/json"], "id": "users-recipient-get-DwqyZ", "summary": "Get All Recipients" }, { "requests": [{ "items": [{ "name": "recipientId", "description": "Profile ID of recipient to return", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"user_id\": \"\",\n    \"profile_id\": \"\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"dob\": \"\",\n    \"gender\": \"\",\n    \"group_id\": \"\",\n    \"email\": \"\",\n    \"phone\": \"\",\n    \"student_id\": \"\",\n    \"avatar\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Recipient not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/users/recipient/{recipientId}/", "methodName": "get", "tags": ["Recipient"], "description": "Returns a single recipient", "produces": ["application/json"], "id": "users-recipient-recipientId-get-8PuRc", "summary": "Find recipient by ID" }, { "requests": [{ "items": [{ "name": "recipientId", "description": "Profile ID of recipient to return", "required": true, "type": "string" }], "title": "path" }, { "items": [{ "name": "body", "description": "Recipient object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"dob\": \"\",\n    \"gender\": \"\",\n    \"group_id\": \"\",\n    \"email\": \"\",\n    \"phone\": \"\",\n    \"student_id\": \"\",\n    \"avatar\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "200", "description": "Successfully Updated", "headers": [], "modelExample": "{\n    \"status\": \"\",\n    \"message\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Recipient not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/users/recipient/{recipientId}/", "methodName": "put", "tags": ["Recipient"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "users-recipient-recipientId-put-ThraU", "summary": "Update an existing recipient" }, { "requests": [{ "items": [{ "name": "recipientId", "description": "Profile id to delete recipient", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "204", "description": "Successfully Deleted", "headers": [], "modelExample": "\"\"" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Recipient not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/users/recipient/{recipientId}/", "methodName": "delete", "tags": ["Recipient"], "description": "", "produces": ["application/json"], "id": "users-recipient-recipientId-delete-dMTuF", "summary": "Deletes a recipient" }, { "requests": [], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/template/certificates/", "methodName": "get", "tags": ["Certificate"], "description": "Return all templates", "produces": ["application/json"], "id": "credential-template-certificates-get-PLyJk", "summary": "Get Custom Certificate Templates" }, { "requests": [{ "items": [{ "name": "body", "description": "Certificate object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"title\": \"\",\n    \"subject\": \"\",\n    \"eulogy\": \"\",\n    \"degree\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"badges\": \"\",\n    \"courses\": \"a8f4b500-c59f-470d-beee-f3855a21ca9e,a8b55abe-4a23-4946-a2e7-d9f3d7b1a439\",\n    \"is_active\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"status\": \"\",\n    \"message\": \"\"\n}" }, { "name": "400", "description": "Fields missing", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/certificate/", "methodName": "post", "tags": ["Certificate"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-certificate-post-4SZ3R", "summary": "Add a new certificate to the credential" }, { "requests": [{ "items": [{ "name": "page", "description": "Page Number to return", "required": false, "type": "integer" }, { "name": "title", "description": "Name of certificate to return", "required": false, "type": "string" }, { "name": "degree", "description": "Program name of certificate to return", "required": false, "type": "string" }, { "name": "code", "description": "Unique code of certificate to return", "required": false, "type": "string" }], "title": "query" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"count\": \"\",\n    \"next\": \"\",\n    \"previous\": \"\",\n    \"results\": {\n        \"id\": \"\",\n        \"title\": \"\",\n        \"certificate_image\": \"\",\n        \"subject\": \"\",\n        \"eulogy\": \"\",\n        \"degree\": \"\",\n        \"code\": \"\",\n        \"criteria\": \"\",\n        \"description\": \"\",\n        \"company_logo\": \"\",\n        \"custom_logo\": \"\",\n        \"badges\": \"\",\n        \"is_active\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    }\n}" }], "pathName": "/credential/certificate/", "methodName": "get", "tags": ["Certificate"], "description": "Return all certificate", "produces": ["application/json"], "id": "credential-certificate-get-4SgBD", "summary": "Get All Certificate" }, { "requests": [{ "items": [{ "name": "certificateId", "description": "ID of certificate to return", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"title\": \"\",\n    \"certificate_image\": \"\",\n    \"subject\": \"\",\n    \"eulogy\": \"\",\n    \"degree\": \"\",\n    \"code\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"custom_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Certificate not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/certificate/{certificateId}/", "methodName": "get", "tags": ["Certificate"], "description": "Returns a single certificate", "produces": ["application/json"], "id": "credential-certificate-certificateId-get-NLIys", "summary": "Find certificate by ID" }, { "requests": [{ "items": [{ "name": "certificateId", "description": "ID of certificate to return", "required": true, "type": "string" }], "title": "path" }, { "items": [{ "name": "body", "description": "Certificate object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"title\": \"\",\n    \"subject\": \"\",\n    \"eulogy\": \"\",\n    \"degree\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"badges\": \"\",\n    \"courses\": \"a8f4b500-c59f-470d-beee-f3855a21ca9e,a8b55abe-4a23-4946-a2e7-d9f3d7b1a439\",\n    \"is_active\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "200", "description": "Successfully Updated", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"title\": \"\",\n    \"certificate_image\": \"\",\n    \"subject\": \"\",\n    \"eulogy\": \"\",\n    \"degree\": \"\",\n    \"code\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"custom_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Certificate not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/certificate/{certificateId}/", "methodName": "put", "tags": ["Certificate"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-certificate-certificateId-put-9jy8A", "summary": "Update an existing certificate" }, { "requests": [{ "items": [{ "name": "certificateId", "description": "Certificate id to delete", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "204", "description": "Successfully Deleted", "headers": [], "modelExample": "\"\"" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Certificate not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/certificate/{certificateId}/", "methodName": "delete", "tags": ["Certificate"], "description": "", "produces": ["application/json"], "id": "credential-certificate-certificateId-delete-BOC8C", "summary": "Deletes a certificate" }, { "requests": [], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/template/badges/", "methodName": "get", "tags": ["Badge"], "description": "Return all templates", "produces": ["application/json"], "id": "credential-template-badges-get-PjuV0", "summary": "Get Custom Badge Templates" }, { "requests": [{ "items": [{ "name": "body", "description": "Badge object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"title\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"logo\": \"\",\n    \"is_active\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"status\": \"\",\n    \"message\": \"\"\n}" }, { "name": "400", "description": "Fields missing", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/badge/logo/create/", "methodName": "post", "tags": ["Badge"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-badge-logo-create-post-YaROo", "summary": "Add an own badge to the credential" }, { "requests": [{ "items": [{ "name": "body", "description": "Badge object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"title\": \"\",\n    \"company_name\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"status\": \"\",\n    \"message\": \"\"\n}" }, { "name": "400", "description": "Fields missing", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/badge/", "methodName": "post", "tags": ["Badge"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-badge-post-siOsC", "summary": "Add a new badge to the credential" }, { "requests": [{ "items": [{ "name": "page", "description": "Page Number to return", "required": false, "type": "integer" }, { "name": "title", "description": "Name of certificate to return", "required": false, "type": "string" }, { "name": "code", "description": "Unique code of certificate to return", "required": false, "type": "string" }], "title": "query" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"count\": \"\",\n    \"next\": \"\",\n    \"previous\": \"\",\n    \"results\": {\n        \"id\": \"\",\n        \"title\": \"\",\n        \"badge_image\": \"\",\n        \"company_name\": \"\",\n        \"code\": \"\",\n        \"criteria\": \"\",\n        \"description\": \"\",\n        \"custom_logo\": \"\",\n        \"badges\": \"\",\n        \"is_active\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    }\n}" }], "pathName": "/credential/badge/", "methodName": "get", "tags": ["Badge"], "description": "Return all badge", "produces": ["application/json"], "id": "credential-badge-get-VQ4GY", "summary": "Get All Badge" }, { "requests": [{ "items": [{ "name": "badgeId", "description": "ID of badge to return", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"title\": \"\",\n    \"badge_image\": \"\",\n    \"company_name\": \"\",\n    \"code\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"custom_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Badge not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/badge/{badgeId}/", "methodName": "get", "tags": ["Badge"], "description": "Returns a single badge", "produces": ["application/json"], "id": "credential-badge-badgeId-get-b2FmH", "summary": "Find badge by ID" }, { "requests": [{ "items": [{ "name": "badgeId", "description": "ID of badge to return", "required": true, "type": "string" }], "title": "path" }, { "items": [{ "name": "body", "description": "badge object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"title\": \"\",\n    \"company_name\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "200", "description": "Successfully Updated", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"title\": \"\",\n    \"badge_image\": \"\",\n    \"company_name\": \"\",\n    \"code\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"custom_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Badge not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/badge/{badgeId}/", "methodName": "put", "tags": ["Badge"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-badge-badgeId-put-cnQOH", "summary": "Update an existing badge" }, { "requests": [{ "items": [{ "name": "badgeId", "description": "Badge id to delete", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "204", "description": "Successfully Deleted", "headers": [], "modelExample": "\"\"" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Badge not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/badge/{badgeId}/", "methodName": "delete", "tags": ["Badge"], "description": "", "produces": ["application/json"], "id": "credential-badge-badgeId-delete-Fvdpm", "summary": "Deletes a badge" }, { "requests": [{ "items": [{ "name": "body", "description": "Achievement object that needs to be added to the credential", "required": true, "modelExample": "\"\"" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"error_details\": [],\n    \"messages\": [],\n    \"error_email_list\": [],\n    \"in_count\": \"\",\n    \"out_count\": \"\",\n    \"fail_count\": \"\",\n    \"msg\": \"\",\n    \"status\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/create/achievement/", "methodName": "post", "tags": ["Achievement"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-create-achievement-post-yuSS4", "summary": "Add a new achievement to the credential" }, { "requests": [{ "items": [{ "name": "page", "description": "Page Number to return", "required": false, "type": "integer" }, { "name": "title", "description": "Name of certificate to return", "required": false, "type": "string" }, { "name": "email", "description": "Recipient Email to return", "required": false, "type": "string" }, { "name": "last_name", "description": "Recipient Last Name to return", "required": false, "type": "string" }, { "name": "first_name", "description": "Recipient First Name to return", "required": false, "type": "string" }, { "name": "student_id", "description": "Recipient ID to return", "required": false, "type": "string" }, { "name": "code", "description": "Certificate code to return", "required": false, "type": "string" }, { "name": "certificate_number", "description": "Achievement number to return", "required": false, "type": "string" }, { "name": "blockchain", "description": "Blockchain to return", "required": true, "type": "integer" }], "title": "query" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"count\": \"\",\n    \"next\": \"\",\n    \"previous\": \"\",\n    \"results\": {\n        \"id\": \"\",\n        \"recipient\": {\n            \"user_id\": \"\",\n            \"profile_id\": \"\",\n            \"first_name\": \"\",\n            \"last_name\": \"\",\n            \"dob\": \"\",\n            \"gender\": \"\",\n            \"group_id\": \"\",\n            \"email\": \"\",\n            \"phone\": \"\",\n            \"student_id\": \"\",\n            \"avatar\": \"\",\n            \"created\": \"\",\n            \"modified\": \"\"\n        },\n        \"template\": {\n            \"id\": \"\",\n            \"title\": \"\",\n            \"certificate_image\": \"\",\n            \"subject\": \"\",\n            \"eulogy\": \"\",\n            \"degree\": \"\",\n            \"code\": \"\",\n            \"criteria\": \"\",\n            \"description\": \"\",\n            \"company_logo\": \"\",\n            \"custom_logo\": \"\",\n            \"badges\": \"\",\n            \"is_active\": \"\",\n            \"created\": \"\",\n            \"modified\": \"\"\n        },\n        \"evidence\": \"\",\n        \"transaction_address\": \"\",\n        \"issue_date\": \"\",\n        \"start_date\": \"\",\n        \"end_date\": \"\",\n        \"start_validity\": \"\",\n        \"end_validity\": \"\",\n        \"achievement_image\": \"\",\n        \"achievement_thum\": \"\",\n        \"organization\": \"\",\n        \"testimonial\": \"\",\n        \"achievement_number\": \"\",\n        \"blockchain\": \"\",\n        \"is_blockchain\": \"\",\n        \"is_expired\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    }\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/achievement/", "methodName": "get", "tags": ["Achievement"], "description": "Return all achievement", "produces": ["application/json"], "id": "credential-achievement-get-UG6C4", "summary": "Get All Achievement" }, { "requests": [{ "items": [{ "name": "achievementId", "description": "ID of achievement to return", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"recipient\": {\n        \"user_id\": \"\",\n        \"profile_id\": \"\",\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"dob\": \"\",\n        \"gender\": \"\",\n        \"group_id\": \"\",\n        \"email\": \"\",\n        \"phone\": \"\",\n        \"student_id\": \"\",\n        \"avatar\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    },\n    \"template\": {\n        \"id\": \"\",\n        \"title\": \"\",\n        \"certificate_image\": \"\",\n        \"subject\": \"\",\n        \"eulogy\": \"\",\n        \"degree\": \"\",\n        \"code\": \"\",\n        \"criteria\": \"\",\n        \"description\": \"\",\n        \"company_logo\": \"\",\n        \"custom_logo\": \"\",\n        \"badges\": \"\",\n        \"is_active\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    },\n    \"evidence\": \"\",\n    \"transaction_address\": \"\",\n    \"issue_date\": \"\",\n    \"start_date\": \"\",\n    \"end_date\": \"\",\n    \"start_validity\": \"\",\n    \"end_validity\": \"\",\n    \"achievement_image\": \"\",\n    \"achievement_thum\": \"\",\n    \"organization\": \"\",\n    \"testimonial\": \"\",\n    \"achievement_number\": \"\",\n    \"blockchain\": \"\",\n    \"is_blockchain\": \"\",\n    \"is_expired\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }], "pathName": "/credential/achievement/{achievementId}/", "methodName": "get", "tags": ["Achievement"], "description": "Returns a single achievement", "produces": ["application/json"], "id": "credential-achievement-achievementId-get-KaZt8", "summary": "Find achievement by ID" }, { "requests": [{ "items": [{ "name": "achievementId", "description": "Achievement id to delete", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "204", "description": "Successfully Deleted", "headers": [], "modelExample": "\"\"" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Achievement not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/achievement/{achievementId}/", "methodName": "delete", "tags": ["Achievement"], "description": "", "produces": ["application/json"], "id": "credential-achievement-achievementId-delete-S9Fbn", "summary": "Deletes a achievement" }, { "requests": [{ "items": [{ "name": "body", "description": "Achievement object that needs to be added to the credential", "required": true, "modelExample": "\"\"" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"messages\": [],\n    \"completed_achivements\": {\n        \"id\": \"\",\n        \"certificate_number\": \"\",\n        \"student_email\": \"\"\n    },\n    \"in_count\": \"\",\n    \"out_count\": \"\",\n    \"msg\": \"\",\n    \"status\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/publish/json/", "methodName": "post", "tags": ["Achievement"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-publish-json-post-skGaa", "summary": "Add a new achievement to the credential" }, { "requests": [{ "items": [{ "name": "certificate_number", "description": "Certificate Number (achievement number)", "required": true, "type": "string" }], "title": "query" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"title\": \"\",\n    \"code\": \"\",\n    \"student_image\": \"\",\n    \"evidence_lable\": \"\",\n    \"evidence\": \"\",\n    \"transaction_address\": \"\",\n    \"licence\": \"\",\n    \"pdf_uploads\": \"\",\n    \"criteria\": \"\",\n    \"logo\": \"\",\n    \"degree\": \"\",\n    \"business_unit\": \"\",\n    \"expiry_actions\": \"\",\n    \"expiry_text\": \"\",\n    \"issuer_image\": \"\",\n    \"is_deleted\": \"\",\n    \"certificate_number\": \"\",\n    \"issue_date\": \"\",\n    \"badges\": \"\",\n    \"uploads\": \"\",\n    \"graduation_class\": \"\",\n    \"is_verified\": \"\",\n    \"is_certificate\": \"\",\n    \"content_text\": \"\",\n    \"website\": \"\",\n    \"issuer_firstname\": \"\",\n    \"issuer_lastname\": \"\",\n    \"issuer_email\": \"\",\n    \"is_invalidated\": \"\",\n    \"start_date\": \"\",\n    \"end_date\": \"\",\n    \"is_apple_wallet\": \"\",\n    \"social_media_sharing\": \"\",\n    \"description\": \"\",\n    \"university_logo\": \"\",\n    \"university_website\": \"\",\n    \"qr_uploads\": \"\",\n    \"course_name\": \"\",\n    \"social_uploads\": \"\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"studentAddress\": \"\",\n    \"template\": \"\",\n    \"c_logo\": \"\",\n    \"blockchain_client\": \"\",\n    \"is_test\": \"\",\n    \"is_gdpr\": \"\",\n    \"start_validity\": \"\",\n    \"end_validity\": \"\",\n    \"organization\": \"\",\n    \"testimonial\": \"\",\n    \"achievement_image\": \"\",\n    \"is_expired\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/search/achievement/", "methodName": "get", "tags": ["Achievement"], "description": "Find achievement by Certificate Number", "produces": ["application/json"], "id": "credential-search-achievement-get-r2Ssh", "summary": "Find achievement by Certificate Number" }, { "requests": [{ "items": [{ "name": "file", "type": "file", "description": "The file to upload." }], "title": "formData" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"file\": \"\",\n    \"file_url\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/files/upload/", "methodName": "post", "tags": ["Upload"], "description": "", "consumes": ["multipart/form-data"], "produces": ["application/json"], "id": "files-upload-post-ybXn4", "summary": "Upload a file  - .jpeg, png, gif , doc, csv , xls, pdf" }] }; window.ASSETS_ROOT = 'https://cdn.jsdelivr.net/npm/api-html@1.1.8/themes/compact/';</script>
+        id="pathsObjectScript">window.pathsObject = { "auths": [{ "type": "apiKey", "name": "x-api-key", "in": "header", "title": "API key", "description": "\n        An API key is a special token (x-api-key) that you need to provide in header when making API calls, Like:\n        <code> { x-api-key: \"TOKEN_VALUE\" }</code>\n      " }], "rootUrl": "https://demo.vottun.com/api/v2", "security": [{ "api_key": [] }], "paths": [{ "requests": [{ "items": [{ "name": "body", "description": "Recipient object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"dob\": \"\",\n    \"gender\": \"\",\n    \"group_id\": \"\",\n    \"email\": \"\",\n    \"phone\": \"\",\n    \"student_id\": \"\",\n    \"avatar\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"status\": \"\",\n    \"message\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/users/add/recipient/", "methodName": "post", "tags": ["Credentials"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "users-add-recipient-post-reMo2", "summary": "Add a new recipient to the credential" }, { "requests": [{ "items": [{ "name": "page", "description": "Page Number to return", "required": false, "type": "integer" }, { "name": "first_name", "description": "First Name of recipient to return", "required": false, "type": "string" }, { "name": "last_name", "description": "Last Name of recipient to return", "required": false, "type": "string" }, { "name": "email", "description": "Email of recipient to return", "required": false, "type": "string" }, { "name": "phone", "description": "Phone Number of recipient to return", "required": false, "type": "string" }, { "name": "student_id", "description": "StudentID of recipient to return", "required": false, "type": "string" }, { "name": "group_name", "description": "Group Name of recipient to return", "required": false, "type": "string" }], "title": "query" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"count\": \"\",\n    \"next\": \"\",\n    \"previous\": \"\",\n    \"results\": {\n        \"user_id\": \"\",\n        \"profile_id\": \"\",\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"dob\": \"\",\n        \"gender\": \"\",\n        \"group_id\": \"\",\n        \"email\": \"\",\n        \"phone\": \"\",\n        \"student_id\": \"\",\n        \"avatar\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    }\n}" }], "pathName": "/users/recipient/", "methodName": "get", "tags": ["Credentials"], "description": "Return all recipient", "produces": ["application/json"], "id": "users-recipient-get-LT4rd", "summary": "Get All Recipients" }, { "requests": [{ "items": [{ "name": "recipientId", "description": "Profile ID of recipient to return", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"user_id\": \"\",\n    \"profile_id\": \"\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"dob\": \"\",\n    \"gender\": \"\",\n    \"group_id\": \"\",\n    \"email\": \"\",\n    \"phone\": \"\",\n    \"student_id\": \"\",\n    \"avatar\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Recipient not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/users/recipient/{recipientId}/", "methodName": "get", "tags": ["Credentials"], "description": "Returns a single recipient", "produces": ["application/json"], "id": "users-recipient-recipientId-get-xikeC", "summary": "Find recipient by ID" }, { "requests": [{ "items": [{ "name": "recipientId", "description": "Profile ID of recipient to return", "required": true, "type": "string" }], "title": "path" }, { "items": [{ "name": "body", "description": "Recipient object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"dob\": \"\",\n    \"gender\": \"\",\n    \"group_id\": \"\",\n    \"email\": \"\",\n    \"phone\": \"\",\n    \"student_id\": \"\",\n    \"avatar\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "200", "description": "Successfully Updated", "headers": [], "modelExample": "{\n    \"status\": \"\",\n    \"message\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Recipient not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/users/recipient/{recipientId}/", "methodName": "put", "tags": ["Credentials"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "users-recipient-recipientId-put-1RRwB", "summary": "Update an existing recipient" }, { "requests": [{ "items": [{ "name": "recipientId", "description": "Profile id to delete recipient", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "204", "description": "Successfully Deleted", "headers": [], "modelExample": "\"\"" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Recipient not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/users/recipient/{recipientId}/", "methodName": "delete", "tags": ["Credentials"], "description": "", "produces": ["application/json"], "id": "users-recipient-recipientId-delete-PkPYv", "summary": "Deletes a recipient" }, { "requests": [], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/template/certificates/", "methodName": "get", "tags": ["Credentials"], "description": "Return all templates", "produces": ["application/json"], "id": "credential-template-certificates-get-sr9wP", "summary": "Get Custom Certificate Templates" }, { "requests": [{ "items": [{ "name": "body", "description": "Certificate object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"title\": \"\",\n    \"subject\": \"\",\n    \"eulogy\": \"\",\n    \"degree\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"badges\": \"\",\n    \"courses\": \"a8f4b500-c59f-470d-beee-f3855a21ca9e,a8b55abe-4a23-4946-a2e7-d9f3d7b1a439\",\n    \"is_active\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"status\": \"\",\n    \"message\": \"\"\n}" }, { "name": "400", "description": "Fields missing", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/certificate/", "methodName": "post", "tags": ["Credentials"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-certificate-post-PY4ls", "summary": "Add a new certificate to the credential" }, { "requests": [{ "items": [{ "name": "page", "description": "Page Number to return", "required": false, "type": "integer" }, { "name": "title", "description": "Name of certificate to return", "required": false, "type": "string" }, { "name": "degree", "description": "Program name of certificate to return", "required": false, "type": "string" }, { "name": "code", "description": "Unique code of certificate to return", "required": false, "type": "string" }], "title": "query" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"count\": \"\",\n    \"next\": \"\",\n    \"previous\": \"\",\n    \"results\": {\n        \"id\": \"\",\n        \"title\": \"\",\n        \"certificate_image\": \"\",\n        \"subject\": \"\",\n        \"eulogy\": \"\",\n        \"degree\": \"\",\n        \"code\": \"\",\n        \"criteria\": \"\",\n        \"description\": \"\",\n        \"company_logo\": \"\",\n        \"custom_logo\": \"\",\n        \"badges\": \"\",\n        \"is_active\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    }\n}" }], "pathName": "/credential/certificate/", "methodName": "get", "tags": ["Credentials"], "description": "Return all certificate", "produces": ["application/json"], "id": "credential-certificate-get-xtU7m", "summary": "Get All Certificate" }, { "requests": [{ "items": [{ "name": "certificateId", "description": "ID of certificate to return", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"title\": \"\",\n    \"certificate_image\": \"\",\n    \"subject\": \"\",\n    \"eulogy\": \"\",\n    \"degree\": \"\",\n    \"code\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"custom_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Certificate not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/certificate/{certificateId}/", "methodName": "get", "tags": ["Credentials"], "description": "Returns a single certificate", "produces": ["application/json"], "id": "credential-certificate-certificateId-get-EHQ45", "summary": "Find certificate by ID" }, { "requests": [{ "items": [{ "name": "certificateId", "description": "ID of certificate to return", "required": true, "type": "string" }], "title": "path" }, { "items": [{ "name": "body", "description": "Certificate object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"title\": \"\",\n    \"subject\": \"\",\n    \"eulogy\": \"\",\n    \"degree\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"badges\": \"\",\n    \"courses\": \"a8f4b500-c59f-470d-beee-f3855a21ca9e,a8b55abe-4a23-4946-a2e7-d9f3d7b1a439\",\n    \"is_active\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "200", "description": "Successfully Updated", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"title\": \"\",\n    \"certificate_image\": \"\",\n    \"subject\": \"\",\n    \"eulogy\": \"\",\n    \"degree\": \"\",\n    \"code\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"custom_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Certificate not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/certificate/{certificateId}/", "methodName": "put", "tags": ["Credentials"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-certificate-certificateId-put-KmCZA", "summary": "Update an existing certificate" }, { "requests": [{ "items": [{ "name": "certificateId", "description": "Certificate id to delete", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "204", "description": "Successfully Deleted", "headers": [], "modelExample": "\"\"" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Certificate not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/certificate/{certificateId}/", "methodName": "delete", "tags": ["Credentials"], "description": "", "produces": ["application/json"], "id": "credential-certificate-certificateId-delete-nN4dt", "summary": "Deletes a certificate" }, { "requests": [], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/template/badges/", "methodName": "get", "tags": ["Credentials"], "description": "Return all templates", "produces": ["application/json"], "id": "credential-template-badges-get-6awTl", "summary": "Get Custom Badge Templates" }, { "requests": [{ "items": [{ "name": "body", "description": "Badge object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"title\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"logo\": \"\",\n    \"is_active\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"status\": \"\",\n    \"message\": \"\"\n}" }, { "name": "400", "description": "Fields missing", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/badge/logo/create/", "methodName": "post", "tags": ["Credentials"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-badge-logo-create-post-tqJ8N", "summary": "Add an own badge to the credential" }, { "requests": [{ "items": [{ "name": "body", "description": "Badge object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"title\": \"\",\n    \"company_name\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"status\": \"\",\n    \"message\": \"\"\n}" }, { "name": "400", "description": "Fields missing", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/badge/", "methodName": "post", "tags": ["Credentials"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-badge-post-YlMRz", "summary": "Add a new badge to the credential" }, { "requests": [{ "items": [{ "name": "page", "description": "Page Number to return", "required": false, "type": "integer" }, { "name": "title", "description": "Name of certificate to return", "required": false, "type": "string" }, { "name": "code", "description": "Unique code of certificate to return", "required": false, "type": "string" }], "title": "query" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"count\": \"\",\n    \"next\": \"\",\n    \"previous\": \"\",\n    \"results\": {\n        \"id\": \"\",\n        \"title\": \"\",\n        \"badge_image\": \"\",\n        \"company_name\": \"\",\n        \"code\": \"\",\n        \"criteria\": \"\",\n        \"description\": \"\",\n        \"custom_logo\": \"\",\n        \"badges\": \"\",\n        \"is_active\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    }\n}" }], "pathName": "/credential/badge/", "methodName": "get", "tags": ["Credentials"], "description": "Return all badge", "produces": ["application/json"], "id": "credential-badge-get-OWtiB", "summary": "Get All Badge" }, { "requests": [{ "items": [{ "name": "badgeId", "description": "ID of badge to return", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"title\": \"\",\n    \"badge_image\": \"\",\n    \"company_name\": \"\",\n    \"code\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"custom_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Badge not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/badge/{badgeId}/", "methodName": "get", "tags": ["Credentials"], "description": "Returns a single badge", "produces": ["application/json"], "id": "credential-badge-badgeId-get-v6qo2", "summary": "Find badge by ID" }, { "requests": [{ "items": [{ "name": "badgeId", "description": "ID of badge to return", "required": true, "type": "string" }], "title": "path" }, { "items": [{ "name": "body", "description": "badge object that needs to be added to the credential", "required": true, "modelExample": "{\n    \"title\": \"\",\n    \"company_name\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"company_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\"\n}" }], "title": "body" }], "responses": [{ "name": "200", "description": "Successfully Updated", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"title\": \"\",\n    \"badge_image\": \"\",\n    \"company_name\": \"\",\n    \"code\": \"\",\n    \"criteria\": \"\",\n    \"description\": \"\",\n    \"custom_logo\": \"\",\n    \"badges\": \"\",\n    \"is_active\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Badge not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/badge/{badgeId}/", "methodName": "put", "tags": ["Credentials"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-badge-badgeId-put-1cu0B", "summary": "Update an existing badge" }, { "requests": [{ "items": [{ "name": "badgeId", "description": "Badge id to delete", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "204", "description": "Successfully Deleted", "headers": [], "modelExample": "\"\"" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Badge not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/badge/{badgeId}/", "methodName": "delete", "tags": ["Credentials"], "description": "", "produces": ["application/json"], "id": "credential-badge-badgeId-delete-c6hS5", "summary": "Deletes a badge" }, { "requests": [{ "items": [{ "name": "body", "description": "Achievement object that needs to be added to the credential", "required": true, "modelExample": "\"\"" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"error_details\": [],\n    \"messages\": [],\n    \"error_email_list\": [],\n    \"in_count\": \"\",\n    \"out_count\": \"\",\n    \"fail_count\": \"\",\n    \"msg\": \"\",\n    \"status\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/create/achievement/", "methodName": "post", "tags": ["Credentials"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-create-achievement-post-NpYBc", "summary": "Add a new achievement to the credential" }, { "requests": [{ "items": [{ "name": "page", "description": "Page Number to return", "required": false, "type": "integer" }, { "name": "title", "description": "Name of certificate to return", "required": false, "type": "string" }, { "name": "email", "description": "Recipient Email to return", "required": false, "type": "string" }, { "name": "last_name", "description": "Recipient Last Name to return", "required": false, "type": "string" }, { "name": "first_name", "description": "Recipient First Name to return", "required": false, "type": "string" }, { "name": "student_id", "description": "Recipient ID to return", "required": false, "type": "string" }, { "name": "code", "description": "Certificate code to return", "required": false, "type": "string" }, { "name": "certificate_number", "description": "Achievement number to return", "required": false, "type": "string" }, { "name": "blockchain", "description": "Blockchain to return", "required": true, "type": "integer" }], "title": "query" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"count\": \"\",\n    \"next\": \"\",\n    \"previous\": \"\",\n    \"results\": {\n        \"id\": \"\",\n        \"recipient\": {\n            \"user_id\": \"\",\n            \"profile_id\": \"\",\n            \"first_name\": \"\",\n            \"last_name\": \"\",\n            \"dob\": \"\",\n            \"gender\": \"\",\n            \"group_id\": \"\",\n            \"email\": \"\",\n            \"phone\": \"\",\n            \"student_id\": \"\",\n            \"avatar\": \"\",\n            \"created\": \"\",\n            \"modified\": \"\"\n        },\n        \"template\": {\n            \"id\": \"\",\n            \"title\": \"\",\n            \"certificate_image\": \"\",\n            \"subject\": \"\",\n            \"eulogy\": \"\",\n            \"degree\": \"\",\n            \"code\": \"\",\n            \"criteria\": \"\",\n            \"description\": \"\",\n            \"company_logo\": \"\",\n            \"custom_logo\": \"\",\n            \"badges\": \"\",\n            \"is_active\": \"\",\n            \"created\": \"\",\n            \"modified\": \"\"\n        },\n        \"evidence\": \"\",\n        \"transaction_address\": \"\",\n        \"issue_date\": \"\",\n        \"start_date\": \"\",\n        \"end_date\": \"\",\n        \"start_validity\": \"\",\n        \"end_validity\": \"\",\n        \"achievement_image\": \"\",\n        \"achievement_thum\": \"\",\n        \"organization\": \"\",\n        \"testimonial\": \"\",\n        \"achievement_number\": \"\",\n        \"blockchain\": \"\",\n        \"is_blockchain\": \"\",\n        \"is_expired\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    }\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/achievement/", "methodName": "get", "tags": ["Credentials"], "description": "Return all achievement", "produces": ["application/json"], "id": "credential-achievement-get-BacFJ", "summary": "Get All Achievement" }, { "requests": [{ "items": [{ "name": "achievementId", "description": "ID of achievement to return", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"recipient\": {\n        \"user_id\": \"\",\n        \"profile_id\": \"\",\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"dob\": \"\",\n        \"gender\": \"\",\n        \"group_id\": \"\",\n        \"email\": \"\",\n        \"phone\": \"\",\n        \"student_id\": \"\",\n        \"avatar\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    },\n    \"template\": {\n        \"id\": \"\",\n        \"title\": \"\",\n        \"certificate_image\": \"\",\n        \"subject\": \"\",\n        \"eulogy\": \"\",\n        \"degree\": \"\",\n        \"code\": \"\",\n        \"criteria\": \"\",\n        \"description\": \"\",\n        \"company_logo\": \"\",\n        \"custom_logo\": \"\",\n        \"badges\": \"\",\n        \"is_active\": \"\",\n        \"created\": \"\",\n        \"modified\": \"\"\n    },\n    \"evidence\": \"\",\n    \"transaction_address\": \"\",\n    \"issue_date\": \"\",\n    \"start_date\": \"\",\n    \"end_date\": \"\",\n    \"start_validity\": \"\",\n    \"end_validity\": \"\",\n    \"achievement_image\": \"\",\n    \"achievement_thum\": \"\",\n    \"organization\": \"\",\n    \"testimonial\": \"\",\n    \"achievement_number\": \"\",\n    \"blockchain\": \"\",\n    \"is_blockchain\": \"\",\n    \"is_expired\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }], "pathName": "/credential/achievement/{achievementId}/", "methodName": "get", "tags": ["Credentials"], "description": "Returns a single achievement", "produces": ["application/json"], "id": "credential-achievement-achievementId-get-O1OA7", "summary": "Find achievement by ID" }, { "requests": [{ "items": [{ "name": "achievementId", "description": "Achievement id to delete", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "204", "description": "Successfully Deleted", "headers": [], "modelExample": "\"\"" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Achievement not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/achievement/{achievementId}/", "methodName": "delete", "tags": ["Credentials"], "description": "", "produces": ["application/json"], "id": "credential-achievement-achievementId-delete-JBVtp", "summary": "Deletes a achievement" }, { "requests": [{ "items": [{ "name": "body", "description": "Achievement object that needs to be added to the credential", "required": true, "modelExample": "\"\"" }], "title": "body" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"messages\": [],\n    \"completed_achivements\": {\n        \"id\": \"\",\n        \"certificate_number\": \"\",\n        \"student_email\": \"\"\n    },\n    \"in_count\": \"\",\n    \"out_count\": \"\",\n    \"msg\": \"\",\n    \"status\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/publish/json/", "methodName": "post", "tags": ["Credentials"], "description": "", "consumes": ["application/json"], "produces": ["application/json"], "id": "credential-publish-json-post-ya3Bh", "summary": "Add a new achievement to the credential" }, { "requests": [{ "items": [{ "name": "certificate_number", "description": "Certificate Number (achievement number)", "required": true, "type": "string" }], "title": "query" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"title\": \"\",\n    \"code\": \"\",\n    \"student_image\": \"\",\n    \"evidence_lable\": \"\",\n    \"evidence\": \"\",\n    \"transaction_address\": \"\",\n    \"licence\": \"\",\n    \"pdf_uploads\": \"\",\n    \"criteria\": \"\",\n    \"logo\": \"\",\n    \"degree\": \"\",\n    \"business_unit\": \"\",\n    \"expiry_actions\": \"\",\n    \"expiry_text\": \"\",\n    \"issuer_image\": \"\",\n    \"is_deleted\": \"\",\n    \"certificate_number\": \"\",\n    \"issue_date\": \"\",\n    \"badges\": \"\",\n    \"uploads\": \"\",\n    \"graduation_class\": \"\",\n    \"is_verified\": \"\",\n    \"is_certificate\": \"\",\n    \"content_text\": \"\",\n    \"website\": \"\",\n    \"issuer_firstname\": \"\",\n    \"issuer_lastname\": \"\",\n    \"issuer_email\": \"\",\n    \"is_invalidated\": \"\",\n    \"start_date\": \"\",\n    \"end_date\": \"\",\n    \"is_apple_wallet\": \"\",\n    \"social_media_sharing\": \"\",\n    \"description\": \"\",\n    \"university_logo\": \"\",\n    \"university_website\": \"\",\n    \"qr_uploads\": \"\",\n    \"course_name\": \"\",\n    \"social_uploads\": \"\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"studentAddress\": \"\",\n    \"template\": \"\",\n    \"c_logo\": \"\",\n    \"blockchain_client\": \"\",\n    \"is_test\": \"\",\n    \"is_gdpr\": \"\",\n    \"start_validity\": \"\",\n    \"end_validity\": \"\",\n    \"organization\": \"\",\n    \"testimonial\": \"\",\n    \"achievement_image\": \"\",\n    \"is_expired\": \"\",\n    \"created\": \"\",\n    \"modified\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/search/achievement/", "methodName": "get", "tags": ["Credentials"], "description": "Find achievement by Certificate Number", "produces": ["application/json"], "id": "credential-search-achievement-get-z04MK", "summary": "Find achievement by Certificate Number" }, { "requests": [{ "items": [{ "name": "page", "description": "Page Number to return logs", "required": false, "type": "integer" }, { "name": "state", "description": "1 - Sent, 2 - Failed, 3 - Received", "required": false, "type": "integer", "enum": [1, 2, 3] }, { "name": "student_name", "description": "Recipient Name to return logs", "required": false, "type": "string" }, { "name": "publisher_name", "description": "Publisher Name to return logs", "required": false, "type": "string" }, { "name": "subject", "description": "Subject of email to return logs", "required": false, "type": "string" }, { "name": "from_date", "description": "Captured From date to return logs", "required": false, "type": "string" }, { "name": "to_date", "description": "Captured To date to return logs", "required": false, "type": "string" }], "title": "query" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"count\": \"\",\n    \"next\": \"\",\n    \"previous\": \"\",\n    \"results\": {\n        \"id\": \"\",\n        \"publisher_name\": \"\",\n        \"student_name\": \"\",\n        \"email\": \"\",\n        \"message\": \"\",\n        \"subject\": \"\",\n        \"failed_reason\": \"\",\n        \"status\": \"\",\n        \"email_type\": \"\",\n        \"created\": \"\"\n    }\n}" }], "pathName": "/credential/email/logs/", "methodName": "get", "tags": ["Credentials"], "description": "Return all logs", "produces": ["application/json"], "id": "credential-email-logs-get-e9Z7H", "summary": "Get All Email Logs" }, { "requests": [{ "items": [{ "name": "logId", "description": "Log ID of email to return", "required": true, "type": "string" }], "title": "path" }], "responses": [{ "name": "200", "description": "successful operation", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"publisher_name\": \"\",\n    \"student_name\": \"\",\n    \"email\": \"\",\n    \"message\": \"\",\n    \"subject\": \"\",\n    \"failed_reason\": \"\",\n    \"status\": \"\",\n    \"email_type\": \"\",\n    \"created\": \"\"\n}" }, { "name": "400", "description": "Invalid ID supplied", "headers": [], "modelExample": "\"\"" }, { "name": "404", "description": "Log not found", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/credential/email/logs/{logId}/", "methodName": "get", "tags": ["Credentials"], "description": "Returns a single log", "produces": ["application/json"], "id": "credential-email-logs-logId-get-jvodL", "summary": "Find log by ID" }, { "requests": [{ "items": [{ "name": "file", "type": "file", "description": "The file to upload." }], "title": "formData" }], "responses": [{ "name": "201", "description": "Successfully Created", "headers": [], "modelExample": "{\n    \"id\": \"\",\n    \"file\": \"\",\n    \"file_url\": \"\"\n}" }, { "name": "400", "description": "Validation exception", "headers": [], "modelExample": "\"\"" }, { "name": "500", "description": "Server Issue", "headers": [], "modelExample": "\"\"" }], "pathName": "/files/upload/", "methodName": "post", "tags": ["Credentials"], "description": "", "consumes": ["multipart/form-data"], "produces": ["application/json"], "id": "files-upload-post-9qvj3", "summary": "Upload a file  - .jpeg, png, gif , doc, csv , xls, pdf" }] }; window.ASSETS_ROOT = 'https://cdn.jsdelivr.net/npm/api-html@1.1.8/themes/compact/';</script>
     <script src="https://cdn.jsdelivr.net/npm/api-html@1.1.8/themes/compact/assets/js/bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/api-html@1.1.8/themes/compact/assets/js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/api-html@1.1.8/themes/compact/assets/js/single.api.js"></script>
